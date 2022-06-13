@@ -1,4 +1,6 @@
 import "./navbar.css";
+import React from 'react';
+import Cart from "../cart/cart-icon";
 
 const Navbar = () => {
 
@@ -9,6 +11,7 @@ const Navbar = () => {
                 <li>Alimentos</li>
                 <li>Accesorios</li>
                 <li>Contacto</li>
+                <Cart />
             </ul>
         </nav>
     )
