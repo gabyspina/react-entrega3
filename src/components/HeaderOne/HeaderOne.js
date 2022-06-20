@@ -1,9 +1,9 @@
 
 import logo from '../assets/logo-pet-modificado.ico'
-import './header.css'
+import './HeaderOne.css'
 
 
-const Header = () => {
+const HeaderOne = () => {
   return (
     <header className='App-section'>
         <div>
@@ -19,4 +19,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default  HeaderOne;

@@ -1,6 +1,6 @@
 import React  from 'react';
 import './App.css';
-import Header from './components/header/Header';
+import HeaderOne from './components/HeaderOne/HeaderOne';
 import Navbar from './components/navbar/navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
@@ -12,14 +12,14 @@ const App = () => {
     <div className="App">
          
       <div className='app-header'>
-        <Header />
+        <HeaderOne />
       </div>
             
       <div className='app-navbar'>
         <Navbar />
       </div>
       
-  <ItemListContainer />
+      <ItemListContainer/>
 
     </div>
   );
