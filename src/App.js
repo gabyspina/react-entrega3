@@ -17,10 +17,12 @@ const App = () => {
             
       <div className='app-navbar'>
         <Navbar />
-      </div>
+      </div >
       
+      <div className='app-cards'>
+        
       <ItemListContainer/>
-
+      </div>
     </div>
   );
 

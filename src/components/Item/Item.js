@@ -5,37 +5,40 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
+import './Item.css';
 
 
-
-const CardComponents = (info) => {
+const Item = ({productos}) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <div className='Item'>
+    <Card sx={{ maxWidth: 200 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="320"
-          image={info.img}
-          alt={info.nombre}
+          height="100"
+          image={productos.img}
+          alt={productos.nombre}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {info.nombre}
+            {productos.nombre}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {info.precio}
+            {productos.precio}
           </Typography>
         </CardContent>
       </CardActionArea>
 
-      <CardActions>
+      <CardActions className='item-count'>
         
           <ItemCount/>
         
       </CardActions>
 
     </Card>
+
+    </div>
   );
 }
 
-export default CardComponents;
+export default Item;

@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react'
+import './ItemListContainer.css'
 
-import CardComponents from '../CardComponents/CardComponents'
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
 
     const [items, setItems] = useState([])
 
-      console.log('Infor:',items)
 
     useEffect(() => {
       fetch('https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json')
@@ -16,14 +16,10 @@ const ItemListContainer = () => {
 
 
   return (
-    <div>
+    <div className='contenedor'> {
 
-      <h3> Alimentos </h3>
-      
-    {items.map((item) => (
-      <CardComponents key={item.id} info={item} />
-    ))}
-
+      <ItemList productos={items}/>
+}
     </div>
   );
 }
