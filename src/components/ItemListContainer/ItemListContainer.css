@@ -1,14 +1,5 @@
 .contenedor{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
-}
-.cards{
+    border: black solid;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: top;
-    margin: 30px;
-    padding: 10px;
 }
