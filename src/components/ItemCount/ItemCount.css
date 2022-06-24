@@ -1,8 +1,9 @@
 .counter-section{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
+    justify-content:flex-start;
+    margin-left: 20px;
+    
 }
 .counter{
     display: flex;

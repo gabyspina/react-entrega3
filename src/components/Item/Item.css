@@ -1,4 +1,13 @@
 .item{
     border: black;
-    height: auto;
+    padding: 10px;
+    display: flex;
+}
+.card-img{
+    height: 300px;
+}
+
+.cards-components{
+    display: flex;
+    justify-content: center;
 }

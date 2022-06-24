@@ -5,7 +5,7 @@ import './CartWidget.css';
 
 
 const CartWidget = () => {
-    const [Count, setCount] = useState(0);
+    const [Count, ] = useState(0);
 
         return (
             <div className='cart-icon'>

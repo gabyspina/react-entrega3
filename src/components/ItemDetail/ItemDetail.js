@@ -5,10 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
-import './Item.css';
 
 
-const Item = ({productos}) => {
+
+const ItemDetail = ({productos}) => {
   return (
     <div className='item'>
     <Card sx={{ width: 200, height: 400}}>
@@ -49,4 +49,4 @@ const Item = ({productos}) => {
   );
 }
 
-export default Item;
+export default ItemDetail;

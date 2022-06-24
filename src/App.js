@@ -3,11 +3,14 @@ import './App.css';
 import HeaderOne from './components/HeaderOne/HeaderOne';
 import Navbar from './components/navbar/navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 const App = () => {
     
     return (
+
+      
 
     <div className="App">
          
@@ -22,7 +25,13 @@ const App = () => {
       <div className='app-cards'>
         
       <ItemListContainer/>
+
       </div>
+
+      <div>
+        <ItemDetailContainer/>  
+      </div>
+
     </div>
   );
 

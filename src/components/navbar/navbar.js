@@ -2,6 +2,8 @@ import "./navbar.css";
 import React from 'react';
 import CartWidget from "../cartWidget/CartWidget";
 
+// Routes
+
 const Navbar = () => {
 
     return (
