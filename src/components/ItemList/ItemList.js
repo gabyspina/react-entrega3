@@ -1,6 +1,6 @@
 import Item from "../Item/Item"
 import './ItemList.css'
-
+import { Link } from 'react-router-dom';
 
 const ItemList = ({productos}) => {
 
@@ -11,9 +11,11 @@ const ItemList = ({productos}) => {
           {productos.map((item) =>{
             return (
               <div key={item.id}> 
-
-                  <Item key={item.id} productos={item} />
-                
+                <Link to={`/detail/${item.id}`}>
+               
+                        <Item  productos={item} />  
+                </Link>
+               
               </div>
                   )})} 
     </div>

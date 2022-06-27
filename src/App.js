@@ -2,37 +2,45 @@ import React  from 'react';
 import './App.css';
 import HeaderOne from './components/HeaderOne/HeaderOne';
 import Navbar from './components/navbar/navbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+// views 
+
+import Food from './views/Food/Food';
+import Home from './views/Home/Home';
+import Error from './views/Error/Error';
+import Accesorios from './views/Accesorios/Accesorios';
+import Contacto from './views/Contacto/Contacto';
+import ItemDetailContainer from './views/ItemDetailContainer/ItemDetailContainer';
 
 
 const App = () => {
     
     return (
 
-      
-
-    <div className="App">
-         
-      <div className='app-header'>
-        <HeaderOne />
-      </div>
-            
-      <div className='app-navbar'>
-        <Navbar />
-      </div >
-      
-      <div className='app-cards'>
+      <Router>
+        <div className="App">
         
-      <ItemListContainer/>
+          <HeaderOne className='app-header'/>
 
-      </div>
+          <Navbar className='app-navbar'/>
 
-      <div>
-        <ItemDetailContainer/>  
-      </div>
+              <Routes>
 
-    </div>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/food' element={<Food />} />
+                  <Route path='/accesorios' element={<Accesorios />} />
+                  <Route path='/contacto' element={<Contacto />} />
+                  <Route path='/detail/:id' element={<ItemDetailContainer />} />
+                  <Route path='*' element={<Error />} />
+
+              </Routes>
+   
+        </div>
+      </Router>
+
+   
   );
 
 }

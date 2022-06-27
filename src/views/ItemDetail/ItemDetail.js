@@ -4,11 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
-import ItemCount from '../ItemCount/ItemCount';
-   
+import ItemCount from '../../components/ItemCount/ItemCount';
 
 
-const ItemDetail = ({productos}) => {
+
+const ItemDetail = ({data}) => {
   return (
     <div className='item'>
     <Card sx={{ width: 200, height: 400}}>
@@ -17,20 +17,20 @@ const ItemDetail = ({productos}) => {
         <CardMedia
           component="img"
           height="200"
-          image={productos.img}
-          alt={productos.nombre}
+          image={data.img}
+          alt={data.nombre}
         />
         </div>
         <div className='cards-components'>
         <CardContent>
           <div>
           <Typography variant="body3" component="div">
-            {productos.nombre}
+            {data.nombre}
           </Typography>
           </div>
           <div>
           <Typography variant="body3" color="text.secondary">
-            {productos.precio}
+            {data.precio}
           </Typography>
           </div>
         </CardContent>

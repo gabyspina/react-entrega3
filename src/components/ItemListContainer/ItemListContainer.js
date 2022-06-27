@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import './ItemListContainer.css'
-
+import axios from 'axios'
 import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
@@ -9,9 +9,9 @@ const ItemListContainer = () => {
 
 
     useEffect(() => {
-      fetch('https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json')
-      .then((response) => response.json())
-      .then((json) => setItems(json))
+      axios('https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json')
+      .then((res)=> setItems(res.data))
+      
           }, [])
 
 
@@ -25,3 +25,4 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer
+

@@ -13,3 +13,9 @@ ul{
     justify-content: space-around;
     align-items: center ;
 }
+.li{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
