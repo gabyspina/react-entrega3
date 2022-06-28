@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     axios(`https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json`)
-    .then((res) => setAlimento(res.data.find( unItem => unItem.id === id))  
+    .then((res) => setAlimento(res.data.find( unItem => unItem.id == id))  
     )
   }, [id]);
 
@@ -22,15 +22,9 @@ const ItemDetailContainer = () => {
     <div>
 
       <h1>Detalle</h1>
+          
           <div>
-            {alimento.map((item) => {
-              console.log(item)
-              return (
-                <div  key={item.id}>
-                    <ItemDetail data={alimento} />
-                </div>
-              );
-            })}
+            <ItemDetail data={alimento}/>
           </div>
             
     </div>
