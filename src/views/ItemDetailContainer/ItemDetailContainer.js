@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom'
 import axios from 'axios'
 
 const ItemDetailContainer = () => {
-  const [alimento, setAlimento] = useState([]);
+  const [alimento, setAlimento] = useState({});
 
  
   let {id} = useParams();
@@ -13,8 +13,8 @@ const ItemDetailContainer = () => {
 
 
   useEffect(() => {
-    axios(`https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json/${id}`)
-    .then((res) => setAlimento(res.data)
+    axios(`https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json`)
+    .then((res) => setAlimento(res.data.find( unItem => unItem.id === id))  
     )
   }, [id]);
 
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
               console.log(item)
               return (
                 <div  key={item.id}>
-                    <ItemDetail data={item} />
+                    <ItemDetail data={alimento} />
                 </div>
               );
             })}
