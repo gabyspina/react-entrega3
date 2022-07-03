@@ -2,12 +2,17 @@
     border: black;
     padding: 10px;
     display: flex;
+    width: 310px;
+    margin: 10px;
+
 }
 .card-img{
-    height: 300px;
+    height: 100px;
+
 }
 
 .cards-components{
     display: flex;
     justify-content: center;
+    margin: 10px;
 }

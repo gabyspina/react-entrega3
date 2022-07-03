@@ -3,20 +3,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, CardActions } from '@mui/material';
-import ItemCount from '../ItemCount/ItemCount';
+import { CardActionArea } from '@mui/material';
+
 import './Item.css';
 
 
 const Item = ({productos}) => {
   return (
     <div className='item'>
-    <Card sx={{ width: 200, height: 400}}>
+    <Card sx={{ width: 500, height: 400}}>
       <CardActionArea className='card-img'>
         <div >
         <CardMedia
           component="img"
-          height="200"
+          height="300"
           image={productos.img}
           alt={productos.nombre}
         />
@@ -37,11 +37,7 @@ const Item = ({productos}) => {
         </div>
       </CardActionArea>
 
-      <CardActions className='item-count'>
-        
-          <ItemCount/>
-        
-      </CardActions>
+
 
     </Card>
 

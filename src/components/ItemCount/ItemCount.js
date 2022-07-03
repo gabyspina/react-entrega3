@@ -3,7 +3,8 @@ import "./ItemCount.css";
 
 
 
-const ItemCount = (stock, initial) => {
+
+const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(0);
 
 
@@ -43,8 +44,8 @@ const ItemCount = (stock, initial) => {
             
             
         </div>
-        <div>
-            <p> Agregar al carrito</p>
+        <div className='btn'>
+            <button onClick={()=>onAdd(count)}>Add Cart</button>
         </div>
     </div>
 </div>
