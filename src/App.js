@@ -13,7 +13,7 @@ import Error from './views/Error/Error';
 import Accesorios from './views/Accesorios/Accesorios';
 import Contacto from './views/Contacto/Contacto';
 import ItemDetailContainer from './views/ItemDetailContainer/ItemDetailContainer';
-
+import Cart from './components/Cart/Cart';
 
 const App = () => {
     
@@ -33,6 +33,7 @@ const App = () => {
                   <Route path='/accesorios' element={<Accesorios />} />
                   <Route path='/contacto' element={<Contacto />} />
                   <Route path='/detail/:id' element={<ItemDetailContainer />} />
+                  <Route path='/cart' element={<Cart />} />
                   <Route path='*' element={<Error />} />
 
               </Routes>

@@ -11,7 +11,7 @@ const ItemList = ({productos}) => {
           {productos.map((item) =>{
             return (
               <div key={item.id}> 
-                <Link to={`/detail/${item.id}`}>
+                <Link className="name" to={`/detail/${item.id}`}>
                
                         <Item  productos={item} />  
                 </Link>

@@ -11,26 +11,34 @@ import './Item.css';
 const Item = ({productos}) => {
   return (
     <div className='item'>
-    <Card sx={{ width: 500, height: 400}}>
+    <Card sx={{ width: 500, height: 450}}>
       <CardActionArea className='card-img'>
-        <div >
+        <div>
         <CardMedia
           component="img"
-          height="300"
+          height="270"
           image={productos.img}
           alt={productos.nombre}
         />
         </div>
         <div className='cards-components'>
         <CardContent>
-          <div>
-          <Typography variant="body3" component="div">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+          <Typography variant="h5"  component="div">
             {productos.nombre}
           </Typography>
           </div>
-          <div>
-          <Typography variant="body3" color="text.secondary">
-            {productos.precio}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}> 
+          <Typography variant="h6" color="text.secondary">
+            {`$ ${productos.precio}`}
           </Typography>
           </div>
         </CardContent>

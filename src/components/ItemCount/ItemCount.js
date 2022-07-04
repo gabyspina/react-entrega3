@@ -1,15 +1,13 @@
 import {useState} from 'react';
 import "./ItemCount.css";
-
-
-
+import {Button}  from '@mui/material';
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(0);
 
 
     const handleCounterUp = () => {
-        stock = 5;
+
 
         if (count < stock) {
             setCount(count + 1);
@@ -22,7 +20,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const handleCounterDown = () => {
    
-        initial = 0;
+
 
         if (count > initial) {
             setCount(count - 1);
@@ -45,7 +43,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             
         </div>
         <div className='btn'>
-            <button onClick={()=>onAdd(count)}>Add Cart</button>
+            <Button variant='contained' onClick={()=>onAdd(count)}>Add Cart</Button>
         </div>
     </div>
 </div>

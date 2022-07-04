@@ -3,11 +3,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import {Button, CardActionArea } from '@mui/material';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import { useState } from 'react';
 import './ItemDetail.css';
-
+import {Link} from 'react-router-dom';
 
 
 const ItemDetail = ({data}) => {
@@ -24,7 +24,7 @@ const ItemDetail = ({data}) => {
 
   return (
     <div className='item'>
-    <Card className='card' sx={{ width: 1200, height: 500}}>
+    <Card className='card' sx={{ width: 1200, height: 600}}>
       <CardActionArea className='card-img'>
         <div >
         <CardMedia
@@ -37,25 +37,41 @@ const ItemDetail = ({data}) => {
         <div className='cards-components'>
         <CardContent>
           <div>
-          <Typography variant="body3" component="div">
+          <Typography variant="h5" component="div">
             {data.nombre}
           </Typography>
           </div>
-          <div>
-          <Typography variant="body3" color="text.secondary">
-            {data.precio}
+          <div style={
+            {
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }
+          }>
+          <Typography variant="h6" color="text.primary">
+            {`$ ${data.precio}`}
           </Typography>
           </div>
         </CardContent>
         </div>
 
-        <div className='itemCount'>
-            <ItemCount stock={data.stock} initial={1} onAdd={onAdd} />  
+          <div className='buttons'>
+              
+              { cant===0 ? <ItemCount stock={5} initial={1} onAdd={onAdd} />  
+
+			      	: <Link className='btn' to={'/cart'}><Button variant="contained" >Finalizar compra</Button></Link> } 
+
+              <Link className='btn' to={'/food'}><Button variant='contained'>Seguir comprando</Button></Link>
+        
         </div>
+
 
       </CardActionArea>
 
-    </Card>
+
+      </Card>
+
+
 
 
     </div>
