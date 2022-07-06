@@ -9,7 +9,7 @@ const ItemListContainer = () => {
 
 
     useEffect(() => {
-      axios('https://dog-food-25e01-default-rtdb.firebaseio.com/alimentos.json')
+      axios('https://alimentos-fef35-default-rtdb.firebaseio.com/alimentos.json')
       .then((res)=> setItems(res.data))
       
           }, [])

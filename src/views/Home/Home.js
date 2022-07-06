@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 const home = () => {
   return (
     <div>
-  
+
+
         <div className='contenedor-imagenes'>
   
           
@@ -14,7 +15,6 @@ const home = () => {
           <img className='img-menu' id='alimentos' src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/Purina%C2%AE%20Familia%20de%20Productos.jpg" alt="alimentos"/>
 
         </div>
-
     </div>
   )
 }

@@ -1,6 +1,6 @@
 .cart-icon{
     position: relative;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-color: #fff;
     border-radius: 50%;
@@ -9,4 +9,16 @@
     align-items: center;
     cursor: pointer;
     transition: all .3s ease-in-out;
+
+}
+.link-icon{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
 }
