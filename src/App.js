@@ -3,8 +3,8 @@ import './App.css';
 import HeaderOne from './components/HeaderOne/HeaderOne';
 import Navbar from './components/navbar/navbar';
 
-
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { CartProvider } from './components/Context/CartContext';
 // views 
 
 import Food from './views/Food/Food';
@@ -18,7 +18,7 @@ import Cart from './components/Cart/Cart';
 const App = () => {
     
     return (
-
+  <CartProvider>
       <Router>
         <div className="App">
         
@@ -40,7 +40,7 @@ const App = () => {
    
         </div>
       </Router>
-
+  </CartProvider>
    
   );
 

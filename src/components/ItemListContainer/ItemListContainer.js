@@ -19,6 +19,7 @@ const ItemListContainer = () => {
     <div className='contenedor'> {
 
       <ItemList productos={items}/>
+      
 }
     </div>
   );
