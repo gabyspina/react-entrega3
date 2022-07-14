@@ -1,29 +1,43 @@
 import {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom'
-import axios from 'axios'
+
+//Firebase
+
+import { db } from '../../firebase/firebaseConfig'
+import {collection, query, getDocs, documentId, where} from 'firebase/firestore'
+
 
 const ItemDetailContainer = () => {
-  const [alimento, setAlimento] = useState({});
-
+  const [alimento, setAlimento] = useState([]);
  
-  let {id} = useParams();
-
-  console.log('id', id)
-
+  const {id} = useParams();
 
   useEffect(() => {
-    axios(`https://alimentos-fef35-default-rtdb.firebaseio.com/alimentos.json`)
-    .then((res) => setAlimento(res.data.find( unItem => unItem.id == id))  
-    )
+    
+    const getAlimento = async () => {
+      const q = query(collection(db, 'food'), where(documentId(), '==', id));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach(doc => {
+        docs.push({...doc.data(), id: doc.id});
+      });
+      setAlimento(docs);
+
+    };
+    getAlimento();
+
   }, [id]);
 
   return (
     <div>
           
-          <div>
-            <ItemDetail data={alimento}/>
-          </div>
+          {alimento.map((data) =>{  
+             
+            return <ItemDetail productos={data} key={data.id}/>
+            
+            })}
             
     </div>
   )

@@ -10,7 +10,7 @@ import './Item.css';
 
 const Item = ({productos}) => {
   return (
-    <div className='item'>
+  <div className='item'>
     <Card sx={{ width: 500, height: 450}}>
       <CardActionArea className='card-img'>
         <div>
@@ -18,7 +18,7 @@ const Item = ({productos}) => {
           component="img"
           height="270"
           image={productos.img}
-          alt={productos.nombre}
+          alt={productos.name}
         />
         </div>
         <div className='cards-components'>
@@ -29,7 +29,7 @@ const Item = ({productos}) => {
             alignItems: 'center'
           }}>
           <Typography variant="h5"  component="div">
-            {productos.nombre}
+            {productos.name}
           </Typography>
           </div>
           <div style={{
@@ -38,16 +38,13 @@ const Item = ({productos}) => {
             alignItems: 'center'
           }}> 
           <Typography variant="h6" color="text.secondary">
-            {`$ ${productos.precio}`}
+            {`$ ${productos.price}`}
           </Typography>
           </div>
         </CardContent>
-        </div>
-      </CardActionArea>
-
-
-
-    </Card>
+    </div>
+  </CardActionArea>
+</Card>
 
     </div>
   );

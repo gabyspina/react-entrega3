@@ -2,16 +2,16 @@ import {useState} from 'react';
 import "./ItemCount.css";
 import {Button}  from '@mui/material';
 
+
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(0);
 
 
     const handleCounterUp = () => {
 
-
         if (count < stock) {
             setCount(count + 1);
-            return "count";
+                return "count";
 
         }else{
             alert("No se puede comprar mas de 5 unidades");
@@ -19,16 +19,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const handleCounterDown = () => {
-   
-
 
         if (count > initial) {
-            setCount(count - 1);
-            
-            return "count";
+            setCount(count - 1);         
+                return "count";
             
     }   else{
-        alert   ("No se puede comprar menos de 0 unidades");
+            alert   ("No se puede comprar menos de 0 unidades");
     }
 }
 
@@ -36,6 +33,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 <div className="item-count">
     <div className='counter-section'>
         <div className='counter'>
+
             <button onClick={handleCounterDown}>-</button>  
                 <p>{count}</p>
             <button onClick={handleCounterUp}>+</button>
@@ -43,7 +41,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
             
         </div>
         <div className='btn'>
-            <Button variant='contained' onClick={()=>onAdd(count)}>Add Cart</Button>
+
+                <Button variant='contained'>Add Cart</Button>
+
         </div>
     </div>
 </div>

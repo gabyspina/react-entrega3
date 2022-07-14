@@ -1,29 +1,57 @@
 import {useState, useEffect} from 'react'
 import './ItemListContainer.css'
-import axios from 'axios'
-import ItemList from '../ItemList/ItemList'
+import Item from '../Item/Item'
 
-const ItemListContainer = () => {
+import { Link } from 'react-router-dom'
 
-    const [items, setItems] = useState([])
+// Firebase
 
+import {collection, query, getDocs} from 'firebase/firestore'
+import {db} from '../../firebase/firebaseConfig'
 
-    useEffect(() => {
-      axios('https://alimentos-fef35-default-rtdb.firebaseio.com/alimentos.json')
-      .then((res)=> setItems(res.data))
+const ItemListContainer = (category) => {
+
+  const [productos, setProductos] = useState([]);
+  const [loading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getProductos = async () => {
+      const q = query(collection(db, 'food'));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach(doc => {
+        docs.push({...doc.data(), id: doc.id});
+      });
+      setProductos(docs);
+
+    };
+    getProductos();
+
+  }, []);
+
+  return(
+    <div className="items-class">
       
-          }, [])
+      {productos.map((data) =>{
 
+        return(
+          <div key={data.id}>
+            <Link to={`/detail/${data.id}`}>
+                
+                <Item productos={data}/>
 
-  return (
-    <div className='contenedor'> {
+            </Link>
 
-      <ItemList productos={items}/>
+              </div>
+          
+
+              ) 
+      })}
+
       
-}
     </div>
   );
-}
+  }
 
 export default ItemListContainer
-

@@ -1,6 +1,11 @@
+.item{
+    display: flex;
+    flex-direction: row;
+}
+
 .card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .card-img{
@@ -12,4 +17,12 @@
 .btn{
     margin: 10px;
     text-decoration: none;
+}
+
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -5,23 +5,19 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Button, CardActionArea } from '@mui/material';
 import ItemCount from '../../components/ItemCount/ItemCount';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './ItemDetail.css';
 import {Link} from 'react-router-dom';
+// context
 
+import { CartContext } from '../../components/CartContext/CartContext';
 
-const ItemDetail = ({data}) => {
+const ItemDetail = ({productos}) => {
 
-  const [cant,setCant] = useState(0)
+  const [add, setAdd] = useState(false);
 
-  const onAdd = (count) => {
+  const {addItem} = useContext(CartContext);
   
-  console.log(`Se agregaron al carrito:${cant} elementos`)
-  
-  setCant(count)
-  
-  }
-
   return (
     <div className='item'>
     <Card className='card' sx={{ width: 1200, height: 600}}>
@@ -30,15 +26,15 @@ const ItemDetail = ({data}) => {
         <CardMedia
           component="img"
           height="300"
-          image={data.img}
-          alt={data.nombre}
+          image={productos.img}
+          alt={productos.name}
         />
         </div>
         <div className='cards-components'>
         <CardContent>
           <div>
           <Typography variant="h5" component="div">
-            {data.nombre}
+            {productos.name}
           </Typography>
           </div>
           <div style={
@@ -48,8 +44,12 @@ const ItemDetail = ({data}) => {
               alignItems: 'center'
             }
           }>
+            {/* <Typography className='detail' variant="h" component="div">
+            {productos.detail}
+          </Typography> */}
+          
           <Typography variant="h6" color="text.primary">
-            {`$ ${data.precio}`}
+            {`$ ${productos.price}`}
           </Typography>
           </div>
         </CardContent>
@@ -57,25 +57,22 @@ const ItemDetail = ({data}) => {
 
           <div className='buttons'>
               
-              { cant===0 ? <ItemCount stock={5} initial={1} onAdd={onAdd} />  
+              {!add ? 
+              <ItemCount stock={5} initial={1} onAdd={addItem}/>    
+              
+              :
+              <Link className='btn green' to='/Cart'><Button variant="contained"> Finalizar Compra </Button></Link>
+            }
+              <Link className='btn' to={'/food'} ><Button variant="contained"> Seguir Comprando </Button></Link>
 
-			      	: <Link className='btn' to={'/cart'}><Button variant="contained" >Finalizar compra</Button></Link> } 
-
-              <Link className='btn' to={'/food'}><Button variant='contained'>Seguir comprando</Button></Link>
-        
         </div>
-
 
       </CardActionArea>
 
-
       </Card>
-
-
-
 
     </div>
   );
 }
 
-export default ItemDetail;
+export default ItemDetail;  

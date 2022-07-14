@@ -1,21 +1,15 @@
 .item{
-    border: black;
-    padding: 10px;
     display: flex;
-    width: 310px;
-    margin: 10px;
-
-}
-.card-img{
-    height: 100px;
-
-}
-
-.cards-components{
-    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    width: 30%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
     margin: 10px;
-}
-.name{
-    text-decoration: none;
 }
